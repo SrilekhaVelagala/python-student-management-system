@@ -123,38 +123,6 @@ python main.py
 
 ---
 
-## 📷 Screenshots
-
-### Main Menu
-
-*(Add screenshot here)*
-
-```
-assets/main_menu.png
-```
-
----
-
-### View Students
-
-*(Add screenshot here)*
-
-```
-assets/view_students.png
-```
-
----
-
-### Search Student
-
-*(Add screenshot here)*
-
-```
-assets/search_student.png
-```
-
----
-
 ## 📚 Concepts Demonstrated
 
 - Python Functions
