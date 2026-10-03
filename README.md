@@ -1,10 +1,18 @@
 # 🎓 Student Management System
 
-A beginner-friendly **Student Management System** developed using **Python** and **MySQL**. This is a console-based application that performs CRUD (Create, Read, Update, Delete) operations on student records. The project demonstrates Python programming, database connectivity, input validation, and SQL queries.
+A console-based **Student Management System** built with **Python** and **MySQL** as a mini project to practise connecting Python applications to a relational database. It performs CRUD (Create, Read, Update, Delete) operations on student records through a simple menu-driven interface.
 
 ---
 
-## 📌 Features
+## 📖 Project Overview
+
+The application lets a user manage student records from the terminal: add new students, view all records, search by ID, update details, and delete records. User input is validated before it reaches the database, and all SQL queries are parameterized.
+
+I built this project to get hands-on experience with Python functions, exception handling, MySQL connectivity, and writing SQL from application code, while keeping the user interface (`main.py`) separate from the database logic (`database.py`).
+
+---
+
+## ✨ Features
 
 - ➕ Add a new student
 - 📋 View all student records
@@ -12,23 +20,25 @@ A beginner-friendly **Student Management System** developed using **Python** and
 - ✏️ Update student details
 - ❌ Delete a student record
 - ✅ Input validation for ID, Age, and CGPA
-- 🔒 Uses parameterized SQL queries to improve security
+- 🔒 Parameterized SQL queries to help prevent SQL injection
 
 ---
 
 ## 🛠️ Technologies Used
 
-- Python 3
-- MySQL
-- MySQL Connector for Python (`mysql-connector-python`)
-- SQL
+| Technology                | Purpose                                  |
+| ------------------------- | ---------------------------------------- |
+| Python 3                  | Programming language                     |
+| MySQL                     | Relational database                      |
+| mysql-connector-python    | Connecting Python to MySQL               |
+| SQL                       | Creating tables and querying data        |
 
 ---
 
 ## 📂 Project Structure
 
-```text
-Student Management System/
+```
+python-student-management-system/
 │
 ├── database.py          # Database connection and CRUD operations
 ├── main.py              # Menu-driven console application
@@ -42,25 +52,38 @@ Student Management System/
 
 ## 🗄️ Database Schema
 
-Database Name:
+**Database:** `student_db`
+**Table:** `students`
 
-```
-student_db
-```
+| Column      | Data Type    | Constraint  |
+| ----------- | ------------ | ----------- |
+| student_id  | INT          | PRIMARY KEY |
+| name        | VARCHAR(100) | NOT NULL    |
+| age         | INT          | -           |
+| branch      | VARCHAR(50)  | -           |
+| cgpa        | DECIMAL(3,2) | -           |
 
-Table:
+---
 
-```
-students
-```
+## 💻 Application Workflow
 
-| Column | Data Type | Constraint |
-|---------|----------|------------|
-| student_id | INT | PRIMARY KEY |
-| name | VARCHAR(100) | NOT NULL |
-| age | INT | - |
-| branch | VARCHAR(50) | - |
-| cgpa | DECIMAL(3,2) | - |
+1. The user selects an option from the menu.
+2. The application validates the input.
+3. Python connects to the MySQL database.
+4. The SQL query is executed with parameters.
+5. Results are displayed in a formatted table.
+
+---
+
+## 📚 What I Learned
+
+- Writing modular Python code by separating UI logic from database logic
+- Connecting Python to MySQL using `mysql-connector-python`
+- Performing **CRUD operations** with SQL (`INSERT`, `SELECT`, `UPDATE`, `DELETE`)
+- Using **parameterized queries** to avoid SQL injection
+- Validating user input and handling errors with **exception handling**
+- Designing a simple table with a **primary key**, constraints, and suitable data types (e.g., `DECIMAL` for CGPA)
+- Committing transactions and managing database connections
 
 ---
 
@@ -68,19 +91,19 @@ students
 
 ### 1. Clone the repository
 
-```bash
+```
 git clone https://github.com/SrilekhaVelagala/python-student-management-system.git
 ```
 
 ### 2. Navigate to the project folder
 
-```bash
+```
 cd python-student-management-system
 ```
 
 ### 3. Install dependencies
 
-```bash
+```
 pip install -r requirements.txt
 ```
 
@@ -88,50 +111,30 @@ pip install -r requirements.txt
 
 Open MySQL and run:
 
-```sql
+```
 SOURCE schema.sql;
 ```
 
 Or copy and execute the SQL statements from `schema.sql`.
 
-### 5. Configure database connection
+### 5. Configure the database connection
 
-Open `database.py` and update the following values according to your MySQL installation.
+Open `database.py` and update these values to match your MySQL setup:
 
-```python
+```
 DB_HOST = "localhost"
 DB_USER = "root"
 DB_PASSWORD = "your_password"
 DB_NAME = "student_db"
 ```
 
+> ⚠️ Do not commit your real password to GitHub.
+
 ### 6. Run the project
 
-```bash
+```
 python main.py
 ```
-
----
-
-## 💻 Application Workflow
-
-1. User selects an option from the menu.
-2. The application validates the input.
-3. Python connects to the MySQL database.
-4. SQL queries are executed.
-5. Results are displayed in a formatted table.
-
----
-
-## 📚 Concepts Demonstrated
-
-- Python Functions
-- Exception Handling
-- Input Validation
-- MySQL Database Connectivity
-- CRUD Operations
-- Parameterized SQL Queries
-- Modular Programming
 
 ---
 
@@ -139,22 +142,22 @@ python main.py
 
 - Search students by name
 - Export records to CSV
+- Store database credentials in environment variables instead of the source file
 - User authentication
 - Graphical User Interface (Tkinter)
 - Attendance management
+- Unit tests for the database functions
 
 ---
 
-## 👨‍💻 Author
+## 👩‍💻 Author
 
 **Srilekha Reddy**
-
 B.Tech Computer Science Student
-
-GitHub: https://github.com/SrilekhaVelagala
+GitHub: <https://github.com/SrilekhaVelagala>
 
 ---
 
-## ⭐ If you found this project helpful
+## 📄 License
 
-If you like this project, consider giving it a ⭐ on GitHub.
+This project was created for learning purposes.
